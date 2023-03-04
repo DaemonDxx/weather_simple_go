@@ -24,7 +24,7 @@ type OpenWeatherAPI struct {
 	measurement int
 }
 
-func (o *OpenWeatherAPI) GetTempByTime(ctx context.Context, date time.Time, location *Location) (float64, error) {
+func (o *OpenWeatherAPI) GetTempByTime(ctx context.Context, date time.Time, location *Coordinates) (float64, error) {
 	resultCh := make(chan float64)
 	errCh := make(chan error)
 
@@ -91,7 +91,7 @@ func (o *OpenWeatherAPI) GetTempByTime(ctx context.Context, date time.Time, loca
 	}
 }
 
-func (o *OpenWeatherAPI) GetDailyTemp(ctx context.Context, date time.Time, location *Location) (float64, error) {
+func (o *OpenWeatherAPI) GetDailyTemp(ctx context.Context, date time.Time, location *Coordinates) (float64, error) {
 	resultCh := make(chan float64, o.measurement)
 	errCh := make(chan error)
 	sum := 0.0

@@ -15,7 +15,7 @@ var (
 type ApiErr struct {
 	Status   int
 	Date     time.Time
-	Location Location
+	Location Coordinates
 	Err      error
 }
 
