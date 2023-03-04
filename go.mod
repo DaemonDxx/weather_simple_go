@@ -1,4 +1,4 @@
-module OpenWeatherAPI
+module github.com/DaemonDxx/weather_simple_go
 
 go 1.19
 
