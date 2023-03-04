@@ -107,7 +107,6 @@ func (o *OpenWeatherAPI) GetDailyTemp(ctx context.Context, date time.Time, locat
 				dateOffset := date.Add(time.Duration(c) * time.Minute)
 
 				t, err := o.GetTempByTime(ctx, dateOffset, location)
-				fmt.Println(t)
 				if err != nil {
 					errCh <- err
 					return
