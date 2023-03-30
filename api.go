@@ -12,7 +12,7 @@ import (
 )
 
 const host = "api.openweathermap.org"
-const max_connections = 10
+const maxConnections = 512
 
 type ApiError struct {
 	err error
@@ -138,7 +138,7 @@ func New(cfg *Config) *OpenWeatherAPI {
 	http := fasthttp.PipelineClient{
 		Addr:     host,
 		Name:     "API",
-		MaxConns: max_connections,
+		MaxConns: maxConnections,
 	}
 
 	return &OpenWeatherAPI{
